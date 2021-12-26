@@ -13,17 +13,17 @@ public class CsvParser {
     private Statement statement;
     private boolean SqlCreated = false;
     private final Map<String, Integer> groups = new HashMap<String, Integer>();
-    private int groupID = 1;
-    private int paymentsID = 1;
     private final Map<String, Integer> series = new HashMap<String, Integer>();
-    private int seriesID = 1;
     private final Map<String, Integer> subjects = new HashMap<String, Integer>();
-    private int subjectsID = 1;
     private final Map<String, Integer> units = new HashMap<String, Integer>();
-    private int unitsID = 1;
     private final Map<Integer, Integer> magnitudes = new HashMap<Integer, Integer>();
     private final Map<String, Integer> statuses = new HashMap<String, Integer>();
     private final Map<String, Integer> supressed = new HashMap<String, Integer>();
+    private int seriesID = 1;
+    private int subjectsID = 1;
+    private int unitsID = 1;
+    private int groupID = 1;
+    private int paymentsID = 1;
     private int magnitudesID = 1;
     private int statusID = 1;
     private int suppressedID = 1;
@@ -53,12 +53,10 @@ public class CsvParser {
             r.stream().skip(1).forEach(x -> {
                 try {
                     AppendSql(createCsvRow(x));
-                    System.out.println(paymentsID+" из "+r.size());
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             });
-            System.out.println((long) r.size());
         } catch (IOException | CsvException e) {
             e.printStackTrace();
         }
@@ -109,7 +107,8 @@ public class CsvParser {
 
         statement.execute("drop table if exists seires");
         statement.execute("create table if not exists seires (seriesID INTEGER PRIMARY KEY ," +
-                " series TEXT, t1 TEXT, t2 TEXT, t3 TEXT, subID INTEGER  REFERENCES subject(subID), groupID INTEGER  REFERENCES grups(groupID))");
+                " series TEXT, t1 TEXT, t2 TEXT, t3 TEXT, subID INTEGER  REFERENCES subject(subID), groupID INTEGER" +
+                "  REFERENCES grups(groupID))");
         statement.execute("drop table if exists subject");
         statement.execute("create table if not exists subject (subID INTEGER PRIMARY KEY ," +
                 " subject TEXT)");
