@@ -32,6 +32,34 @@ public class CsvParser {
     public CsvParser() {
     }
 
+    public void doRequest() throws SQLException {
+        connect();
+        var res = statement.executeQuery("SELECT SUM(value), year, month FROM payments WHERE YEAR = 2020 GROUP BY month");
+        while (res.next()) {
+            System.out.println("Сумма за " + res.getString("month") + "." + res.getString("year") + " - "
+                    + res.getInt(1));
+        }
+        res = statement.executeQuery("SELECT AVG(value), COUNT(*), year, month, unit FROM payments, units where unit ='Dollars' GROUP BY year, month");
+        while (res.next()) {
+            System.out.println("За " + res.getString("month") + "." + res.getString("year") + " - "
+                    + res.getInt(1) + " в среднем. Количество - " + res.getInt(2));
+        }
+        res = statement.executeQuery("SELECT MAX(value), MIN(value) FROM payments, units where unit =" +
+                " 'Dollars' and year = 2014");
+        System.out.println("Максимальный перевод в период с 2014г - " + res.getInt(1));
+        System.out.println("Минимальный перевод в период с 2014г - " + res.getInt(2));
+        System.out.println();
+        res = statement.executeQuery("SELECT MAX(value), MIN(value) FROM payments, units where unit =" +
+                " 'Dollars' and year = 2016");
+        System.out.println("Максимальный перевод в период с 2016г - " + res.getInt(1));
+        System.out.println("Минимальный перевод в период с 2016г - " + res.getInt(2));
+        System.out.println();
+        res = statement.executeQuery("SELECT MAX(value), MIN(value) FROM payments, units where unit =" +
+                " 'Dollars' and year = 2020");
+        System.out.println("Максимальный перевод в период с 2020г - " + res.getInt(1));
+        System.out.println("Минимальный перевод в период с 2020г - " + res.getInt(2));
+
+    }
 
     private void connect() {
         try {
