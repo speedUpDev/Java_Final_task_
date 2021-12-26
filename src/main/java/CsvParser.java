@@ -32,6 +32,7 @@ public class CsvParser {
     public CsvParser() {
     }
 
+
     private void connect() {
         try {
             String url = "jdbc:sqlite:D:/GitHubRepositories/untitled1/transfers.sqlite";
