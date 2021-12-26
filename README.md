@@ -21,32 +21,32 @@
 Выведите сумму всех переводов(где это возможно) в Долларах за 2020 год, сгрупированные по месяцам в виде графика.
 Выполнил задание с выводом в консоль(пока без графика).Код:
 
-![FirstTask](https://github.com/speedUpDev/PyCharm_task/blob/main/screenshots/profiler_filter.png)
+![FirstTask](https://github.com/speedUpDev/Java_Final_task_/blob/main/screenshots/firstTask.png)
 
 Вывод в консоль:
 
-![FirstTaskOutPut](https://github.com/speedUpDev/PyCharm_task/blob/main/screenshots/profiler_filter.png)
+![FirstTaskOutPut](https://github.com/speedUpDev/Java_Final_task_/blob/main/screenshots/firstTaskOut.png)
 
 ### Задание №2
 Выведите в консоль средний размер перевода в долларах, а так же их количество, за каждый уникальный период.
 Код:
 
-![SecondTask](https://github.com/speedUpDev/PyCharm_task/blob/main/screenshots/profiler_filter.png)
+![SecondTask](https://github.com/speedUpDev/Java_Final_task_/blob/main/screenshots/secondTask.png)
 
 Часть вывода(он слишком большой):
 
-![SecondTaskOut](https://github.com/speedUpDev/PyCharm_task/blob/main/screenshots/profiler_filter.png)
+![SecondTaskOut](https://github.com/speedUpDev/Java_Final_task_/blob/main/screenshots/SecondTaskOut.png)
 
 ### Задание №3
 Выведите в консоль максимальный и минимальный перевод за период с 2014, 2016 и 2020 год.
 Не до конца понял задание, выполнил как максимальный и минимальный перевод за год. Если имелось ввиду с 2014-2021, 2016-2021, 2020-2021, достаточно поменять знак в коде с '=', на '>='.
 Код:
 
-![ThirdTask](https://github.com/speedUpDev/PyCharm_task/blob/main/screenshots/profiler_filter.png)
+![ThirdTask](https://github.com/speedUpDev/Java_Final_task_/blob/main/screenshots/ThirdTask.png)
 
 Вывод в консоль:
 
-![ThirdTaskOut](https://github.com/speedUpDev/PyCharm_task/blob/main/screenshots/profiler_filter.png)
+![ThirdTaskOut](https://github.com/speedUpDev/Java_Final_task_/blob/main/screenshots/ThirdTaskOutput.png)
 
 
 
